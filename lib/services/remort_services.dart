@@ -10,7 +10,7 @@ class remort_services {
   Future<List<PostModel>?> getPosts() async {
     var client = http.Client();
 
-    var uri = Uri.parse('https://pcc.edu.pk/ws/bscs2020/services.php');
+    var uri = Uri.parse('Your API');
     var response = await client.get(uri);
     if (response.statusCode == 200) {
       var json = response.body;
@@ -21,7 +21,7 @@ class remort_services {
   Future<bool> insertPosts(insert_model data) async {
     var client = http.Client();
 
-    var uri = Uri.parse('https://pcc.edu.pk/ws/bscs2020/services.php');
+    var uri = Uri.parse('Your API');
     var response = await client.post(uri, body: json.encode(data.toJson()));
     if (response.statusCode == 200) {
       return true;
@@ -42,7 +42,7 @@ class remort_services {
     print(id);
     print(json.encode(id));
     var client = http.Client();
-    var uri = Uri.parse('https://pcc.edu.pk/ws/bscs2020/services.php');
+    var uri = Uri.parse('Your API');
     var response = await client.delete(uri, body: "{\"id\":\"$id\"}");
     if (response.statusCode == 200) {
       return true;
@@ -56,7 +56,7 @@ class remort_services {
     String des = data.description;
     String status = data.status;
     var client = http.Client();
-    var uri = Uri.parse('https://pcc.edu.pk/ws/bscs2020/services.php');
+    var uri = Uri.parse('Your API');
     var response = await client.put(uri,
         body: jsonEncode(<String, String>{
           'id': id,
